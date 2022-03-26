@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+#container {
+    width: 80%;
+    margin: 10px auto;
+}
+
 html {
-    background-color: red;
+    
 }
