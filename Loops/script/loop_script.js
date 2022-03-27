@@ -3,7 +3,7 @@ let basicLoopVals = {
     end: 5,
     i: 0,
     incBy: 1,
-    conditionalOperator: "<",
+    conditionalOperator: "<=",
     step1: 0,
     step2: 1,
     step3: 2,
@@ -11,7 +11,8 @@ let basicLoopVals = {
     step5: 4,
     currentStep: 0,
     classArray: ["color-start","color-condition", "color-code", "color-increment", "color-break"],
-    firstStep: true
+    firstStep: true,
+    lastStep: false
 }
 
 window.onload = function() {
@@ -59,6 +60,7 @@ function basicForLoop(blv) {
 
         updateValues();
         basicLoopDisplay();
+        output.innerText = "";
 
     }) // declare.event
 
@@ -66,6 +68,7 @@ function basicForLoop(blv) {
 
         updateValues();
         basicLoopDisplay();
+        output.innerText = "";
 
     }) // declare.event
 
@@ -73,12 +76,16 @@ function basicForLoop(blv) {
 
         updateValues();
         basicLoopDisplay();
+        output.innerText = "";
+
 
     }) // declare.event
 
     incBy.addEventListener('change', function() {
         updateValues();
         basicLoopDisplay();
+        output.innerText = "";
+
 
     }) // declare.event
 
@@ -106,6 +113,15 @@ function basicForLoop(blv) {
 
             }
         }
+
+        if(blv.currentStep === blv.step3 && checkCondition()) {
+            output.innerText += `Console Number: ${blv.i} \n`;
+        }
+        else if (blv.currentStep === blv.step5 && !blv.lastStep) {
+            output.innerText += `Console Number: After The Loop \n`;
+            blv.lastStep = true;
+
+        }
     } //incrementStep()
 
     function colorBlock(currentStep) {
@@ -124,11 +140,13 @@ function basicForLoop(blv) {
         blv.end = 5;
         blv.incBy = 1;
         blv.currentStep = blv.step1;
+        blv.conditionalOperator = "<=";
 
 
         blv.previousStart = blv.start;
         blv.i = blv.start;
         blv.currentStep = blv.step1;
+        output.innerText = "";
         condition.value = blv.end;
         operator.value = "<=";
         incBy.value = "1";
@@ -142,6 +160,7 @@ function basicForLoop(blv) {
         blv.end = endValue;
         blv.conditionalOperator = opValue;
         blv.currentStep = blv.step1;
+        blv.lastStep = false;
         // blv.end = end;
         // blv.conditionalOperator = condition;
     } // updateValues()
@@ -150,18 +169,14 @@ function basicForLoop(blv) {
         switch(blv.conditionalOperator) {
             case "<":
                 return blv.i < blv.end;
-            break;
             case "<=":
                 return blv.i <= blv.end;
-            break;
         }
     } // checkCondition
 
     function basicLoopDisplay() {
-        // declare.value = `Start = ${blv.start}`;
-        // condition.value = `Condition = ${blv.start} ${blv.conditionalOperator} ${blv.end} `;
-        increment.innerText = `Incrementer = ${blv.i}`;
-        output.innerText = `Output = ${blv.i} ${blv.conditionalOperator} ${blv.end}`;
+        curCon.innerText = `Condition = ${checkCondition()} `;
+        curInc.innerText = `i = ${blv.i}`
         incrementStep();
     } // basicLoopDisplay()
 
