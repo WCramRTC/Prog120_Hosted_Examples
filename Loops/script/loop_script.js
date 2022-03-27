@@ -29,7 +29,7 @@ function basicForLoop(blv) {
     const operator = document.getElementById("basic-loop-operator");
     const output = document.getElementById("basic-loop-output");
     const btnLoopClick = document.getElementById("btn-loop-click");
-    // const currentSteps = document.getElementsByClassName("current");
+    const btnLoopRestart = document.getElementById("btn-loop-restart");
     const incBy = document.getElementById('basic-loop-incBy');
 
     const curStart = document.getElementById("curStart");
@@ -47,7 +47,6 @@ function basicForLoop(blv) {
     ]
     
     defaultValues();
-
     basicLoopDisplay();
 
     btnLoopClick.addEventListener('click', function() {
@@ -88,6 +87,11 @@ function basicForLoop(blv) {
 
 
     }) // declare.event
+
+    btnLoopRestart.addEventListener('click', function() {
+        defaultValues();
+        basicLoopDisplay();
+    }) // btnLoopRestart.event
 
 
 
@@ -144,7 +148,7 @@ function basicForLoop(blv) {
         blv.currentStep = blv.step1;
         blv.conditionalOperator = "<=";
 
-
+        blv.lastStep = false;
         blv.previousStart = blv.start;
         blv.i = blv.start;
         blv.currentStep = blv.step1;

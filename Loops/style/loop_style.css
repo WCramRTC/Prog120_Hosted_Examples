@@ -68,17 +68,6 @@
     text-align: center;
 }
 
-#center-button {
-    width: 135px;
-    margin: 10px auto;
-    display: grid;
-}
-
-#btn-loop-click {
-    padding: 10px;
-    border-radius: 5px;
-
-}
 
 #basic-loop-output {
     font-family: 'Courier New', Courier, monospace;
@@ -99,4 +88,44 @@
     border-radius: 5px;
     box-shadow: inset -2px 2px 10px #61839e;
     font-style: italic;
+}
+
+.basic-loop-button {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: -2px 2px 4px grey;
+}
+
+#center-button {
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 20% 78%;
+    column-gap: 8px;
+    text-align: center;
+    user-select: none;
+}
+
+.step-click {
+    background-color: rgb(32, 119, 126);
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.step-click:active {
+    background-color: rgb(15, 53, 56);
+    transition: background-color .1s;
+}
+
+.restart-click {
+    background-color: rgb(128, 88, 88);
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.restart-click:active {
+    background-color: rgb(194, 5, 5);
+    transition: background-color .1s;
 }
