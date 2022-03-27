@@ -6,11 +6,14 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: hidden;
+}
+
 #container {
     width: 80%;
     margin: 30px auto;
     font-family: 'Open Sans', sans-serif;
-    overflow-y: hidden;
 }
 
 
