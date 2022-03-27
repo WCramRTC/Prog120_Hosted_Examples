@@ -44,3 +44,9 @@
     background-color: blue;
 }
 
+#basic-loop-container {
+    width: 100%;
+    min-width: 500px;
+    border: 10px solid black;
+    padding: 10px;
+}

@@ -2,6 +2,7 @@ let basicLoopVals = {
     start: 0,
     end: 5,
     i: 0,
+    incBy: 1,
     conditionalOperator: "<",
     step1: 0,
     step2: 1,
@@ -18,53 +19,93 @@ window.onload = function() {
 } // window.onload
 
 function basicForLoop(blv) {
-    blv.previousStart = blv.start;
-    blv.i = blv.start;
-    blv.currentStep = blv.step1;
+
 
     const declare = document.getElementById("basic-loop-declare");
     const condition = document.getElementById("basic-loop-condition");
     const increment = document.getElementById("basic-loop-increment");
     const codeBlock = document.getElementById("basic-loop-code-block");
+    const operator = document.getElementById("basic-loop-operator");
     const output = document.getElementById("basic-loop-output");
     const btnLoopClick = document.getElementById("btn-loop-click");
-    const currentSteps = document.getElementsByClassName("current");
+    // const currentSteps = document.getElementsByClassName("current");
+    const incBy = document.getElementById('basic-loop-incBy');
+
+    const curStart = document.getElementById("curStart");
+    const curCon = document.getElementById("curCon");
+    const curCode = document.getElementById("curCode");
+    const curInc = document.getElementById("curInc");
+    const curBreak = document.getElementById("curBreak");
+
+    const currentSteps = [
+        curStart,
+        curCon,
+        curCode,
+        curInc,
+        curBreak
+    ]
+    
+    defaultValues();
 
     basicLoopDisplay();
 
     btnLoopClick.addEventListener('click', function() {
         incrementValue();
         basicLoopDisplay();
-
+        checkCondition();
     }) // btn Event
 
     declare.addEventListener('change', function() {
-        
+
+        updateValues();
+        basicLoopDisplay();
+
+    }) // declare.event
+
+    operator.addEventListener('change', function() {
+
+        updateValues();
+        basicLoopDisplay();
+
+    }) // declare.event
+
+    condition.addEventListener('change', function() {
+
+        updateValues();
+        basicLoopDisplay();
+
+    }) // declare.event
+
+    incBy.addEventListener('change', function() {
         updateValues();
         basicLoopDisplay();
 
     }) // declare.event
 
     function incrementValue() {
-        if(blv.i < blv.end) blv.i++;
+        let inc = parseInt(incBy.value);
+        if(checkCondition() && blv.currentStep === blv.step4) blv.i += inc;
     }
 
     function incrementStep() {
-
+        colorBlock(blv.currentStep);
         if(blv.firstStep === true) {
             blv.firstStep = false;
         }
-
-        if(blv.i < blv.end) {
+        if(checkCondition()) {
             blv.currentStep = 
             (blv.currentStep === blv.step4) ? 
             blv.step2 : blv.currentStep += 1; 
-        }
+        }     
         else {
-            blv.currentStep = blv.step5;
+            if(blv.currentStep != blv.step2 && blv.currentStep != blv.step5) {
+                blv.currentStep = blv.step2;
+            }
+            else {
+                blv.currentStep = blv.step5;
+
+            }
         }
-
-
     } //incrementStep()
 
     function colorBlock(currentStep) {
@@ -81,24 +122,46 @@ function basicForLoop(blv) {
     function defaultValues() {
         blv.i = 0;
         blv.end = 5;
+        blv.incBy = 1;
         blv.currentStep = blv.step1;
+
+
+        blv.previousStart = blv.start;
+        blv.i = blv.start;
+        blv.currentStep = blv.step1;
+        condition.value = blv.end;
+        operator.value = "<=";
+        incBy.value = "1";
     } // restart
 
     function updateValues() {
-        let value = parseInt(declare.value);
-        blv.start = blv.i = value;
+        let decValue = parseInt(declare.value);
+        let opValue = operator.value;
+        let endValue = parseInt(condition.value);
+        blv.start = blv.i = decValue;
+        blv.end = endValue;
+        blv.conditionalOperator = opValue;
         blv.currentStep = blv.step1;
         // blv.end = end;
         // blv.conditionalOperator = condition;
-    }
+    } // updateValues()
 
+    function checkCondition() {
+        switch(blv.conditionalOperator) {
+            case "<":
+                return blv.i < blv.end;
+            break;
+            case "<=":
+                return blv.i <= blv.end;
+            break;
+        }
+    } // checkCondition
 
     function basicLoopDisplay() {
-        declare.innerText = `Start = ${blv.start}`;
-        condition.innerText = `Condition = ${blv.start} ${blv.conditionalOperator} ${blv.end} `;
+        // declare.value = `Start = ${blv.start}`;
+        // condition.value = `Condition = ${blv.start} ${blv.conditionalOperator} ${blv.end} `;
         increment.innerText = `Incrementer = ${blv.i}`;
-        output.innerText = `Output = ${blv.currentStep}`;
-        colorBlock(blv.currentStep);
+        output.innerText = `Output = ${blv.i} ${blv.conditionalOperator} ${blv.end}`;
         incrementStep();
     } // basicLoopDisplay()
 
