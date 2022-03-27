@@ -114,7 +114,7 @@ function basicForLoop(blv) {
             }
         }
 
-        if(blv.currentStep === blv.step3 && checkCondition()) {
+        if(blv.currentStep === blv.step4 && checkCondition()) {
             output.innerText += `Console Number: ${blv.i} \n`;
         }
         else if (blv.currentStep === blv.step5 && !blv.lastStep) {
