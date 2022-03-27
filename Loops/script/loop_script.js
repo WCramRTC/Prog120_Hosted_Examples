@@ -89,6 +89,8 @@ function basicForLoop(blv) {
 
     }) // declare.event
 
+
+
     function incrementValue() {
         let inc = parseInt(incBy.value);
         if(checkCondition() && blv.currentStep === blv.step4) blv.i += inc;
@@ -177,6 +179,7 @@ function basicForLoop(blv) {
     function basicLoopDisplay() {
         curCon.innerText = `Condition = ${checkCondition()} `;
         curInc.innerText = `i = ${blv.i}`
+        output.scrollTop = output.scrollHeight;
         incrementStep();
     } // basicLoopDisplay()
 

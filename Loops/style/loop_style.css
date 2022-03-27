@@ -15,22 +15,36 @@
 
 .color-start {
     background-color: aqua;
+    color: black;
+    font-weight: bold;
 }
 
 .color-condition {
     background-color: pink;
+    color: black;
+    font-weight: bold;
+
 }
 
 .color-code {
     background-color: orange;
+    color: black;
+    font-weight: bold;
+
 }
 
 .color-increment {
     background-color: green;
+    color: black;
+    font-weight: bold;
+
 }
 
 .color-break {
     background-color: lightblue;
+    color: black;
+    font-weight: bold;
+
 }
 
 .current {
@@ -39,6 +53,7 @@
 
 #basic-loop-container {
     margin: 0 auto;
+    height: 400px;
     width: 450px;
     padding: 20px;
     box-shadow: -2px 2px 5px grey;
@@ -56,7 +71,7 @@
 #center-button {
     width: 135px;
     margin: 10px auto;
-
+    display: grid;
 }
 
 #btn-loop-click {
@@ -67,16 +82,21 @@
 
 #basic-loop-output {
     font-family: 'Courier New', Courier, monospace;
-    background-color: white;
-    color: black;
+    background-color: rgb(29, 29, 29);
+    color: rgb(214, 214, 214);
     font-size: .8rem;
     padding: 10px;
+    height: 100px;
+    overflow-y: scroll;
+    border-radius: 5px;
 }
 
 #basic-loop-full {
     padding: 10px;
-    background-color: white;
+    background-color: #384c5c;
+    color: #d9e4eb;
     font-size: .9rem;
-    box-shadow: inset -2px 2px 5px grey;
+    border-radius: 5px;
+    box-shadow: inset -2px 2px 10px #61839e;
     font-style: italic;
 }
