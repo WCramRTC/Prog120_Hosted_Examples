@@ -9,6 +9,38 @@
     margin: 10px auto;
 }
 
-html {
-    
+#test-blocks {
+    margin-top: 20px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 5px;
 }
+
+#test-blocks div {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+}
+
+.color-start {
+    background-color: aqua;
+}
+
+.color-condition {
+    background-color: pink;
+}
+
+.color-code {
+    background-color: orange;
+}
+
+.color-increment {
+    background-color: green;
+}
+
+.color-break {
+    background-color: blue;
+}
+
