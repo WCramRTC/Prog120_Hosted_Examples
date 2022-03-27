@@ -10,78 +10,82 @@
 <body>
     <div id="container">
         <div id="basic-loop-container">
-            <div id="basic-loop-statement">
-                <div class="current" id="curStart">Runs once at start</div>
-                <div class="current" id="curCon">Condition</div>
-                <div class="current" id="curInc">Increment</div>
-
-                <p>for(
-                    int i = <select id="basic-loop-declare">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>;
-                </p>
-
-                <p>
-                    i 
-                    <select id="basic-loop-operator">
-                        <option value="&lt;">&lt;</option>
-                        <option value="&lt;=">&lt;=</option>
-
-                    </select>
-                    <select id="basic-loop-condition">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                    ;
+            <div id="basic-loop-full">
+                <div id="basic-loop-statement">
+                    <div class="current" id="curStart">Declare - Start</div>
+                    <div class="current" id="curCon">Condition</div>
+                    <div class="current" id="curInc">Increment</div>
+    
+                    <p>for(
+                        int i = <select id="basic-loop-declare">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>;
                     </p>
-
+    
                     <p>
-                        i
-                        <select id="basic-loop-incBy">
-                            <option value="1">++</option>
-                            <option value="1=">+=1</option>
-                            <option value="2=">+=2</option>
-                            <option value="3=">+=3</option>
-        
+                        i 
+                        <select id="basic-loop-operator">
+                            <option value="&lt;">&lt;</option>
+                            <option value="&lt;=">&lt;=</option>
+    
                         </select>
-                        )
-                    </p>
-            </div>
-
-            <div id="basic-loop-display">
-                <div class="current" id="curCode">{
-                    <br>
-                    <br>
-                    <p>&emsp;Console.WriteLine("Current Number: " + i);</p>
-                    <br>
-                
-                }</div>
-
-                <br>
-
-                <div class="current" id="curBreak">Console.WriteLine("After The Loop");</div>
-                <div id="center-button">
-                    <input type="button" value="Walk Through >>>" id="btn-loop-click">
+                        <select id="basic-loop-condition">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        ;
+                        </p>
+    
+                        <p>
+                            i
+                            <select id="basic-loop-incBy">
+                                <option value="1">++</option>
+                                <option value="1=">+=1</option>
+                                <option value="2=">+=2</option>
+                                <option value="3=">+=3</option>
+            
+                            </select>
+                            )
+                        </p>
                 </div>
+    
+                <div id="basic-loop-display">
+                    <div class="current" id="curCode">{
+                        <br>
+                        <br>
+                        <p>&emsp;Console.WriteLine("Current Number: " + i);</p>
+                        <br>
+                    
+                    }</div>
+    
+                    <br>
+    
+                    <div class="current" id="curBreak">Console.WriteLine("After The Loop");</div>
+            </div>
+  
+
+            </div>
+            <div id="center-button">
+                <input type="button" value="Walk Through >>>" id="btn-loop-click">
             </div>
             <div id="basic-loop-output">
             </div>

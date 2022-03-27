@@ -12,20 +12,6 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-/* #test-blocks {
-    margin-top: 20px;
-    width: 300px;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    column-gap: 5px;
-}
-
-#test-blocks div {
-    border: 1px solid black;
-    border-radius: 5px;
-    text-align: center;
-    padding: 20px;
-} */
 
 .color-start {
     background-color: aqua;
@@ -52,12 +38,13 @@
 }
 
 #basic-loop-container {
-    width: 650px;
-    border: 10px solid black;
-    padding: 10px;
-    font-size: 1.5rem;
-    background-color: rgb(51, 51, 78);
-    color: rgb(235, 235, 235);
+    margin: 0 auto;
+    width: 450px;
+    padding: 20px;
+    box-shadow: -2px 2px 5px grey;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: rgb(245, 245, 245);
 }
 
 #basic-loop-statement {
@@ -68,7 +55,8 @@
 
 #center-button {
     width: 135px;
-    margin: 0 auto;
+    margin: 10px auto;
+
 }
 
 #btn-loop-click {
@@ -78,8 +66,17 @@
 }
 
 #basic-loop-output {
+    font-family: 'Courier New', Courier, monospace;
     background-color: white;
     color: black;
-    font-size: 1rem;
+    font-size: .8rem;
     padding: 10px;
+}
+
+#basic-loop-full {
+    padding: 10px;
+    background-color: white;
+    font-size: .9rem;
+    box-shadow: inset -2px 2px 5px grey;
+    font-style: italic;
 }
