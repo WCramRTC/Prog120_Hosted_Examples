@@ -49,6 +49,7 @@
 
 .current {
     transition: background-color 1s;
+    border-radius: 3px;
 }
 
 #basic-loop-container {
@@ -60,6 +61,17 @@
     border-radius: 10px;
     font-size: 1rem;
     background-color: rgb(245, 245, 245);
+}
+
+#basic-loop-container select {
+    font-weight: bold;
+    background-color: #384c5c;
+    color: #d9e4eb;
+    cursor: pointer;
+}
+
+#basic-loop-container select:hover {
+    color: #ffffff;
 }
 
 #basic-loop-statement {
