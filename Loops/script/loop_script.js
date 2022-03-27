@@ -121,10 +121,10 @@ function basicForLoop(blv) {
         }
 
         if(blv.currentStep === blv.step4 && checkCondition()) {
-            output.innerText += `Console Number: ${blv.i} \n`;
+            output.innerText += `Current Number: ${blv.i} \n`;
         }
         else if (blv.currentStep === blv.step5 && !blv.lastStep) {
-            output.innerText += `Console Number: After The Loop \n`;
+            output.innerText += `After The Loop \n`;
             blv.lastStep = true;
 
         }
